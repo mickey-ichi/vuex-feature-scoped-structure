@@ -1,5 +1,8 @@
 <template>
-  <ProductList :products="products" />
+  <div>
+    <button @click="mickeyForm">Mickey Form</button>
+    <ProductList :products="products" />
+  </div>
 </template>
 
 <script>
@@ -26,6 +29,11 @@ export default {
   },
   mounted() {
     this.$store.dispatch('$_products/getProducts');
+  },
+  methods: {
+    mickeyForm() {
+      this.$router.push('/mickey');
+    },
   },
 };
 </script>
