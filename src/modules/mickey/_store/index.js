@@ -3,7 +3,17 @@ import getters from './getters';
 import mutations from './mutations';
 
 const state = {
-  messages: [],
+  values: {
+    reaction: {
+      active: false,
+    },
+  },
+  old_values: {
+    reaction: {
+      active: false,
+      list: [],
+    },
+  },
 };
 
 export default {

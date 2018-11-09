@@ -4,6 +4,7 @@ const getValues = (context) => {
   api.fetchValues
     .then((response) => {
       context.commit('VALUES_UPDATED', response);
+      context.commit('OLD_VALUES_UPDATED', response);
     })
     .catch((error) => {
       // eslint-disable-next-line

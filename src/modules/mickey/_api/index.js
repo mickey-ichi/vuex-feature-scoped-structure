@@ -6,7 +6,10 @@ const fetchValues = new Promise((resolve) => {
       content: 'This is an awesome architecture',
       time: '2017-10-21T09:46:19+00:00',
       points: 5,
-      reactions: [],
+      reaction: {
+        list: [],
+        active: true,
+      },
     });
   }, 1500);
 });

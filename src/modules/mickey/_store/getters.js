@@ -1,7 +1,4 @@
-const values = (state) => {
-  console.log(state);
-  return state.values;
-};
+const values = state => state.values;
 
 export default {
   values,

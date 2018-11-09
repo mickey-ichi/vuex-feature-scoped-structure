@@ -1,18 +1,22 @@
 <template>
   <div>
-    <!--<MickeyForm :values="values" />-->
+    <MickeyForm :values="values"
+                @onChange="changeForm"
+                @onAddNew="addNew"
+
+    />
   </div>
 </template>
 
 <script>
   import { mapGetters } from 'vuex';
   import store from './_store';
-  // import MickeyForm from './_components/MickeyForm';
+  import MickeyForm from './_components/MickeyForm';
 
   export default {
     name: 'MickeyModule',
     components: {
-      // MickeyForm,
+      MickeyForm,
     },
     computed: {
       ...mapGetters({
@@ -28,6 +32,18 @@
     },
     mounted() {
       this.$store.dispatch('$_mickey/getValues');
+    },
+    methods: {
+      changeForm(key, value) {
+        this.$store.commit('$_mickey/VALUE_UPDATED', {
+          key, value,
+        });
+      },
+      addNew(key, value) {
+        this.$store.commit('$_mickey/VALUE_UPDATED', {
+          key, value,
+        });
+      },
     },
   };
 </script>
